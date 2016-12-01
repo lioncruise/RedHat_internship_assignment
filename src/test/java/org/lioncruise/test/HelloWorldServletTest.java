@@ -1,9 +1,7 @@
 package org.lioncruise.test;
 
 import static org.junit.Assert.*;
-
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import org.junit.Before;
 import org.junit.Test;
