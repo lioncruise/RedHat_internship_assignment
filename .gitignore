@@ -1,0 +1,14 @@
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+.settings
+
+/target
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
