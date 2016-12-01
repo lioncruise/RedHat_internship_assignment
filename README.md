@@ -10,3 +10,38 @@ So, firstly you need to prepare your development environment. My development env
 * Oracle JDK 1.8.0_65
 * Apache Maven 3.3.9
 * Apache Tomcat 8.0.32
+
+Your JDK must be 1.5+ (due to the use of annotations) and Tomcat must be 7+.
+
+To build and run this APP, clone it to your machine first:
+
+```shell
+git clone git@github.com:lioncruise/RedHat_Inc_Homework.git
+```
+
+Then use Maven to compile, test, package, install and deploy the APP.
+
+```shell
+mvn clean
+mvn install
+```
+
+If it's the first time you use Maven, it will take a little long time. After successfully build the WAR of the App to the local Maven repository. Defaultly, You can `cd ~/.m2` to see the WAR.
+
+Finally, deploy the WAR. You need to fix your tomcat  configuration file.Enter your tomcat installing root directory, add these to /conf/tomcat-users.xml.
+
+```xml
+<role rolename="manager-gui"/>  
+<role rolename="manager-script"/>  
+<user username="admin" password="admin" roles="manager-gui,manager-script"/>  
+```
+
+Then go back to the App's root directory to deploy
+
+```shell
+mvn tomcat7:deploy
+```
+
+At this time, you can enter webapps/ derictory under your tomcat installing root directory, there is a test.war file and test/ directory.
+
+`mvn tomcat7:undeploy` to undeploy the WAR, and `mvn tomcat7:redeploy` to redeploy the WAR.
