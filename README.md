@@ -44,4 +44,12 @@ mvn tomcat7:deploy
 
 At this time, you can enter webapps/ derictory under your tomcat installing root directory, there is a test.war file and test/ directory.
 
+visit `http://localhost:8080/test/hello` and then you'll get what you want.
+
+![](http://7xpq8u.com1.z0.glb.clouddn.com/E0AECB43-B7F2-4C2F-88B6-1C75E6328B36.png)
+
 `mvn tomcat7:undeploy` to undeploy the WAR, and `mvn tomcat7:redeploy` to redeploy the WAR.
+
+To deploy the WAR to JBoss, just copy test.war to `%jboss_home%/standalone/deployments/`. Please be careful with the path configuration of JBoss.
+
+For Jetty, it's also very simple to deploy, just add the WAR file to webapps directory under installing root directory.
