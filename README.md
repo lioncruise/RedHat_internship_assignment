@@ -28,7 +28,7 @@ mvn install
 
 If it's the first time you use Maven, it will take a little long time. After successfully build the WAR of the App to the local Maven repository. Defaultly, You can `cd ~/.m2` to see the WAR.
 
-Finally, deploy the WAR. You need to fix your tomcat  configuration file.Enter your tomcat installing root directory, add these to /conf/tomcat-users.xml.
+Finally, deploy the WAR. You need to fix your tomcat  configuration file. Enter your tomcat installing root directory, add these to /conf/tomcat-users.xml.
 
 ```xml
 <role rolename="manager-gui"/>  
@@ -36,7 +36,7 @@ Finally, deploy the WAR. You need to fix your tomcat  configuration file.Enter y
 <user username="admin" password="admin" roles="manager-gui,manager-script"/>  
 ```
 
-Then go back to the App's root directory to deploy
+Then go back to the App's root directory to deploy. Make sure your tomcat is running!
 
 ```shell
 mvn tomcat7:deploy
@@ -46,7 +46,7 @@ At this time, you can enter webapps/ derictory under your tomcat installing root
 
 visit `http://localhost:8080/test/hello` and then you'll get what you want.
 
-![](http://7xpq8u.com1.z0.glb.clouddn.com/E0AECB43-B7F2-4C2F-88B6-1C75E6328B36.png)
+![](http://7xpq8u.com1.z0.glb.clouddn.com/67FF1F53-E13F-47F4-99F9-5C5CA9219833.png)
 
 `mvn tomcat7:undeploy` to undeploy the WAR, and `mvn tomcat7:redeploy` to redeploy the WAR.
 
